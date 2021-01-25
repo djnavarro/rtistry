@@ -8,7 +8,7 @@ library(tidyverse)
 
 # writes a single img html tag
 tagify <- function(img, folder, width) {
-  paste0('<img src="', folder, "/", img, '" width = "', width, '"> ')
+  paste0('<img src="./', folder, "/", img, '" width = "', width, '"> ')
 }
 
 # writes img tags for all jpg files in the folder
