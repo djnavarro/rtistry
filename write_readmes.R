@@ -7,15 +7,15 @@ library(tidyverse)
 # helper functions --------------------------------------------------------
 
 # writes a single img html tag
-tagify <- function(img, folder, width) {
-  paste0('<img src="./', folder, "/", img, '" width = "', width, '"> ')
+tagify <- function(img, width) {
+  paste0('<img src="./', img, '" width = "', width, '"> ')
 }
 
 # writes img tags for all jpg files in the folder
 write_tags <- function(folder, width = "30%") {
   folder %>% 
     list.files(pattern = ".*\\.jpg$") %>% 
-    map_chr(~tagify(.x, folder, width)) %>% 
+    map_chr(~tagify(.x, width)) %>% 
     paste(collapse = " ")
 }
 
